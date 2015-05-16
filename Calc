@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timer test</title>
+  <style type="text/css">
+       .timer
+       {
+         width:150px;
+         height:20px;
+          background-color: #112233;
+          border-radius: 10px;
+          color:white;
+          text-align: center;
+        }
+  </style>
+</head>
+<body>
+  <p class="timer"></p>
+  <button id="stop" onclick="stop()">Stop</button>
+  <button id="restart" onclick="restart()">Restart from 0</button>
+
+  <script>
+    'use strict';
+    var timer = document.querySelector('.timer');
+    var updateTimer = function(value) {
+      timer.textContent = value;
+    };
+    var value = prompt ("Set the starting point:");
+    // set default value
+    updateTimer(value);
+
+    // start timer
+    window.setInterval(function() {
+      updateTimer(++timer.textContent);
+    }, 1000);
+    function stop()
+      {
+        timer = value;
+      };
+      function restart()
+      {
+        updateTimer(0);
+         window.setInterval(function() {
+           updateTimer(++timer.textContent);
+        }, 10000);
+      };
+  </script>
+</body>
+</html>
