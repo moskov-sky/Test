@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Simple Calculator</title>	
+	</head>
+	<body>
+		<button id='run' onclick="calc()">Run Calc</button>
+		<span id='result'></span>
+		<script type="text/javascript">
+			function calc() {
+			var val1 = parseFloat(window.prompt ("Enter first value:"));
+			var operation = prompt ("Enter operation symbol, choose from +,-,* or /:");
+			var val2 = parseFloat(window.prompt ("Enter second value:"));
+			var res;
+			switch(operation) {
+				case "+":
+					res = val1 + val2;
+					break;
+				case "-":
+					res = val1 - val2;
+					break;
+				case "*":
+					res = val1 * val2;
+					break;
+				case "/":
+					res = val1 / val2;	
+					break;
+				default:
+					res = "Unknown command";
+			}
+			result = res;
+			document.write(res);
+	}
+		</script>		
+	</body>
+</html>
