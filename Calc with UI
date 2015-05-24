@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Simple Calculator</title>
+		<style type="text/css">
+ 		
+    #calculator {			
+      width: 213px;
+			height: auto;
+			background-color: #9dd2ea;
+			border-radius: 5px;
+      position: absolute;
+   	}
+
+    #frm {
+      padding: 15px;
+      border: 1px solid blue;
+      width: 180px;
+      position: relative;
+    }
+
+    #clean {
+      float: left;
+      width: 60px;
+      height: 30px;
+      background-color: #4f86f7;
+      cursor: pointer;
+      position: relative;
+      line-height: 30px;
+      text-align: center;
+      margin: 0 7px 11px 4px;
+
+    }
+    .top, .keys {
+      overflow: hidden;
+    }
+
+  	.keys .numbers {
+			width: 60px;
+			height: 30px;
+			background-color: orange;
+			cursor: pointer;
+			position: relative;
+      float: left;
+      top: 0; 
+      line-height: 30px;
+      text-align: center;
+      border-radius: 3px;
+      margin: 5px 7px 11px 4px;
+		}
+
+    .keys .operators {
+      width: 60px;
+      height: 30px;
+      background-color: red;
+      cursor: pointer;
+      position: relative;
+      float: left;
+      top: 0; 
+      text-align: center;
+      line-height: 30px;
+      border-radius: 3px;
+      margin: 0 7px 11px 4px;
+    }
+
+    #eqvl {
+      background: #DF7401;
+    }
+
+   .numbers:hover {
+    background: #FF4500;
+    color: white;
+    }
+
+    .operators:hover {
+      background: #800000;
+      color: white;
+    }
+
+    #clean:hover {
+      background: blue;
+      color: white;
+    }
+
+    .numbers:active, .operators:active, #clean:active {
+      top: 3px;
+      }
+
+		</style>	
+    
+    <script>
+      function run(num) {
+        document.frm.result.value +=num;
+      }
+      function runPlus() {
+        document.frm.result.value += '+';
+      }
+      function runMin(){
+        document.frm.result.value += '-';
+      }
+      function runMult() {
+        document.frm.result.value += '*';
+      }
+      function runDiv() {
+        document.frm.result.value += '/';
+      }
+      function runEql() {
+        var evalo = eval(document.frm.result.value)
+        document.frm.result.value = evalo;
+      }
+      function runClean() {
+        document.frm.result.value = '';
+      }
+    </script>	
+	</head>
+	<body>
+		<!--Keys: numbers & operators -->
+		<div id="calculator">
+		  <div class="top">
+        <div id="screen"></div>
+          <form id="frm" name="frm">
+          <input name="result">
+        </div> 
+          <div class="keys">
+             <span class="numbers" value="7" onClick="run(7)">7</span>
+			       <span class="numbers" value="8" onClick="run(8)">8</span>
+			       <span class="numbers" value="9" onClick="run(9)">9</span>
+			       <span class="numbers" value="4" onClick="run(4)">4</span>
+			       <span class="numbers" value="5" onClick="run(5)">5</span>
+			       <span class="numbers" value="6" onClick="run(6)">6</span>
+			       <span class="numbers" value="1" onClick="run(1)">1</span>
+			       <span class="numbers" value="2" onClick="run(2)">2</span>
+			       <span class="numbers" value="3" onClick="run(3)">3</span>
+			       <span class="operators" value="+" onClick="runPlus()">+</span>
+			       <span class="operators" value="-" onClick="runMin()">-</span>
+             <span class="operators" id="eqvl" value="=" onClick="runEql()">=</span>
+			       <span class="operators" value="*" onClick="runMult()">*</span>
+			       <span class="operators" value="/" onClick="runDiv()">/</span>			
+			       <span id="clean" value="" onClick="runClean()">C</span>
+		      </div>
+    </div>
+  </body>
+</html>
