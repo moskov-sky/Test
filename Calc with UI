@@ -133,10 +133,10 @@
 			       <span class="numbers" value="3" onClick="run(3)">3</span>
 			       <span class="operators" value="+" onClick="runPlus()">+</span>
 			       <span class="operators" value="-" onClick="runMin()">-</span>
-             <span class="operators" id="eqvl" value="=" onClick="runEql()">=</span>
+             		       <span class="operators" id="eqvl" value="=" onClick="runEql()">=</span>
 			       <span class="operators" value="*" onClick="runMult()">*</span>
 			       <span class="operators" value="/" onClick="runDiv()">/</span>			
-			       <span class="clean" value="" addEventListener('click', "runClean()", false)>C</span>
+			       <span class="clean" value="" onClick="runClean()">C</span>
 		      </div>
     </div>
   </body>
